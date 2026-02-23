@@ -1,1 +1,3 @@
-# Delta-A-solver
+This Python GUI application performs CIDS correction and ΔA(λ) decomposition from multi-sample datasets 
+
+It requires an Excel file with headers formatted as CIDS-<sampleID>-<concentration>, CD-<sampleID>-<concentration>, and ST-<sampleID>-<concentration> (sample IDs may contain dashes). The program groups complete triplets automatically, clamps low scattering extinction values (ST ≥ 0.01) for numerical stability, and solves for ΔA(λ) using your corrected model (with constant path length l_T, default 0.83, used in our experiments). It then forward-predicts CIDS for validation, plots CD, ΔA, CD−ΔA, observed vs predicted CIDS, and the MSPE spectrum, and exports two Excel sheets: a full decomposition file and a ΔA-only file for downstream analysis.
